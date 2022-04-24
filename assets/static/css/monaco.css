@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'MonacoRegular';
+    src: url('../font/monaco-webfont.eot');
+    src: url('../font/monaco-webfont.eot') format('embedded-opentype'),
+         url('../font/monaco-webfont.woff') format('woff'),
+         url('../font/monaco-webfont.ttf') format('truetype'),
+         url('http://www.yixiaoxi.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco/monaco-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.crayon-font-monaco * {
+    font-family: Monaco, 'MonacoRegular', 'Courier New', monospace !important;
+}
