@@ -1,0 +1,181 @@
+{% extends 'base2.html.twig' %}
+{% import 'marco.html.twig' as macros %}
+
+{% block title %}Teebblog{% endblock %}
+
+{% block content %}
+
+        <style type="text/css">
+            <!--
+            .STYLE1 {color: #3300CC}
+            -->
+        </style>
+        <article class="well clearfix entry-common" id="post-4929">
+            <header class="entry-header">
+                <p><a title="" href="/" data-original-title="首页"><i class="fa fa-home"></i>首页</a> » <a href="yixiaoxi.html" data-original-title="" title="">艺小昔</a> » 正文</p>
+                <h1 class="entry-title">{{ post.title }}</h1>
+                <div class="clearfix entry-meta">
+			<span class="pull-left">
+				<time class="entry-date fa fa-calendar" datetime="2015/05/24 23:45:23">
+					&nbsp;{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}
+                </time>
+				<span class="dot">|</span>
+				<span class="categories-links fa fa-folder-o"> <a href="yixiaoxi.html" rel="category tag" data-original-title="" title="">艺小昔</a></span>
+				<span class="dot">|</span>
+				<span class="fa fa-user"> <a href="allen92.html" title="" rel="author" data-original-title="由艺小昔发布">艺小昔</a></span>
+			</span>
+                    <span class="visible-lg visible-md visible-sm pull-left">
+				<span class="dot">|</span>
+				<span class="fa fa-comments-o comments-link"> <a href="#comments" data-original-title="" title="">67 条评论</a></span>
+				<span class="dot">|</span>
+				<span class="fa fa-eye"> 36570 views</span>
+			</span>
+                </div>
+
+            </header>
+            <div class="entry-content clearfix">
+                {{ post.body|raw }}
+                <div class="pull-right single-pages">
+                </div>
+            </div>
+            <footer class="entry-footer">
+                <div class="post-like">
+                    <a href="javascript:;" data-action="ding" data-id="4929" class="specsZan " title="" data-original-title=""><i class="fa fa-thumbs-up fa-fw"></i> 赞 (<span class="count">46</span>)</a>
+                </div>
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                        <p class="label label-specs">本文暂无标签</p>
+                    </div>
+                </div>
+{#                <div class="ads_page_footer"><script type="text/javascript">#}
+{#                        (function() {#}
+{#                            var s = "_" + Math.random().toString(36).slice(2);#}
+{#                            document.write('<div style="" id="' + s + '"></div>');#}
+{#                            (window.slotbydup = window.slotbydup || []).push({#}
+{#                                id: "u5032132",#}
+{#                                container: s#}
+{#                            });#}
+{#                        })();#}
+{#                    </script><div style="" id="_w1pid0vz528"><div style="box-sizing: content-box;position:relative;margin:0 auto;"><iframe id="iframeu5032132_0" name="iframeu5032132_0" src="https://pos.baidu.com/bclm?conwid=1920&amp;conhei=200&amp;rdid=5032132&amp;dc=3&amp;di=u5032132&amp;s1=113759068&amp;s2=2322724075&amp;tr=1650773816&amp;mt=78d701e60a2264f6&amp;dri=0&amp;dis=0&amp;dai=1&amp;ps=16507x404&amp;enu=encoding&amp;exps=110259,110252,110011&amp;ant=0&amp;aa=1&amp;psi=e85c325b2696ae8d&amp;dcb=___adblockplus_&amp;dtm=HTML_POST&amp;dvi=0.0&amp;dci=-1&amp;dpt=none&amp;tpr=1650773816366&amp;ti=%E8%89%BA%E5%B0%8F%E6%98%94%E7%9A%84%E7%94%B1%E6%9D%A5&amp;ari=2&amp;ver=0414&amp;dbv=0&amp;drs=3&amp;pcs=1908x929&amp;pss=1908x27613&amp;cfv=0&amp;cpl=5&amp;chi=1&amp;cce=true&amp;cec=UTF-8&amp;tlm=1650252309&amp;prot=2&amp;rw=929&amp;ltu=file%3A%2F%2F%2Fhome%2Fyang%2F%25E8%2599%259A%25E6%258B%259F%25E6%259C%25BA%25E5%2585%25B1%25E4%25BA%25AB%2FZz_yixiaoxi.com%2Fyixiaoxideyoulai.html&amp;ecd=1&amp;uc=1920x1080&amp;pis=-1x-1&amp;sr=1920x1080&amp;tcn=1650773816&amp;qn=5a840ded1e409f60&amp;fp=f1338435bf434834d150dd5da5b7a796" scrolling="no" width="1920" height="200" frameborder="0"></iframe></div></div>#}
+{#                    <!-- 多条广告如下脚本只需引入一次 -->#}
+{#                    <script type="text/javascript" src="static/js/cm.js" async="async" defer="defer">#}
+{#                    </script>#}
+{#                </div>#}
+                <!-- 文章版权信息 -->
+                <h6 class="copyright">
+                    转载请注明来源：<a href="" title="" data-original-title="{{ post.title }}">{{ post.title }}</a> - <a href="index1.html" title="" data-original-title="{{ project_name }}">{{ project_name }}</a></h6>
+                <h6 class="copyright">
+                    也可以<a href="javascript:;" target="_parent" class="STYLE1" data-original-title="" title="">赞赏</a>博主，{{ admin_name }}感谢每一位来我网站的朋友！		</h6>
+                <!-- 文章版权信息 -->
+                <!--上一篇下一篇-->
+                <ul class="pager clearfix">
+                    <li class="previous">
+                        <a title="" href="javascript:;" data-original-title="2010年我的18周岁成年生日">上一篇</a>
+                    </li>
+                    <li class="next">
+                        <a title="" href="javascript:;" data-original-title="艺小昔个人博客网站三周年庆典">下一篇</a>
+                    </li>
+                </ul>
+                <!--上一篇下一篇-->
+                <!--分享-->
+                <div id="share_box" class="bdsharebuttonbox bdshare-button-style0-32" data-tag="share_2" data-bd-bind="1650773816441">
+                    <a href="#" class="bds bds_tsina" data-cmd="tsina" title="分享到新浪微博" data-original-title="分享到新浪微博"></a>
+                    <a href="#" class="bds bds_qzone" data-cmd="qzone" title="分享到QQ空间" data-original-title="分享到QQ空间"></a>
+                    <a href="#" class="bds bds_douban" data-cmd="douban" title="分享到豆瓣网" data-original-title="分享到豆瓣网"></a>
+                    <a href="#" class="bds bds_renren" data-cmd="renren" title="分享到人人网" data-original-title="分享到人人网"></a>
+                    <a href="#" class="bds bds_weixin" data-cmd="weixin" title="分享到微信" data-original-title="分享到微信"></a>
+                    <a href="#" class="bds bds_tqq" data-cmd="tqq" title="分享到腾讯微博" data-original-title="分享到腾讯微博"></a>
+                    <a href="#" class="bds bds_more" data-cmd="more" data-original-title="" title=""></a>
+                    <a class="bds_count" data-cmd="count" data-original-title="" title=""></a>
+                </div>
+                <!--分享-->
+                <!--相关文章-->
+                <div class="related-posts">
+                    <div class="related-title">
+                        你可能也喜欢：
+                    </div>
+                    <ul>            <li>
+                            <a href="wode32suishengri.html" title="" target="_blank" data-original-title="我的32岁生日">我的32岁生日</a>
+                        </li>
+                        <li>
+                            <a href="yixiaoxiboke9zhouniankuaile.html" title="" target="_blank" data-original-title="艺小昔博客九周年快乐">艺小昔博客九周年快乐</a>
+                        </li>
+                        <li>
+                            <a href="wode31suishengri.html" title="" target="_blank" data-original-title="我的31岁生日">我的31岁生日</a>
+                        </li>
+                        <li>
+                            <a href="yxxgrbk8znqd.html" title="" target="_blank" data-original-title="艺小昔个人博客八周年庆典">艺小昔个人博客八周年庆典</a>
+                        </li>
+                        <li>
+                            <a href="wode30suishengri.html" title="" target="_blank" data-original-title="我的30岁生日">我的30岁生日</a>
+                        </li>
+                    </ul>			</div>
+                <!--相关文章-->
+            </footer>
+
+            <div id="comments" class="comments-area">
+                <h2 class="comments-title">本文共 67 个回复</h2>
+                <div id="commentshow">
+                    <ul class="commentlist list-unstyled">
+                        <li class="comment even thread-even depth-1 parent" id="comment-2805">
+                            <div class="comment-wrap" id="comment-2805">
+                                <div class="comment-author pull-left">
+                                    <img alt="" src="http://secure.gravatar.com/avatar/172e2a583a85440dfa12344116fd648c?s=50&amp;d=mm&amp;r=g" srcset="http://secure.gravatar.com/avatar/172e2a583a85440dfa12344116fd648c?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" width="50" height="50">        </div>
+                                <div class="comment-body">
+                                    <h4>
+                                        <cite class="fn"><a target="_blank" href="javascript:;" rel="external nofollow" class="url" data-original-title="" title="">悦听有声</a> </cite>                <span class="comment-date">
+                    2015/05/26 14:20                </span>
+                                    </h4>
+                                    <p>
+                                        路过            </p>
+
+                                    <div class="reply clearfix">
+                                        <a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;comment-2805&quot;, &quot;2805&quot;, &quot;respond&quot;, &quot;4929&quot; )" aria-label="回复给悦听有声" data-original-title="" title=""><div class="label label-danger pull-right">回复</div></a>            </div>
+
+                                </div>
+                            </div>
+                            <ul class="children">
+                                <li class="comment byuser comment-author-allen92 bypostauthor odd alt depth-2" id="comment-2808">
+                                    <div class="comment-wrap" id="comment-2808">
+                                        <div class="comment-author pull-left">
+                                            <img alt="" src="http://secure.gravatar.com/avatar/eb7f1aa6ec0760ce49e24cfde643168b?s=50&amp;d=mm&amp;r=g" srcset="http://secure.gravatar.com/avatar/eb7f1aa6ec0760ce49e24cfde643168b?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" width="50" height="50">        </div>
+                                        <div class="comment-body">
+                                            <h4>
+                                                <cite class="fn"><a target="_blank" href="index1.html" rel="external nofollow" class="url" data-original-title="" title="">艺小昔</a> <small class="label label-primary">博主</small></cite>                <span class="comment-date">
+                    2015/05/26 18:06                </span>
+                                            </h4>
+                                            <p>
+                                                <span class="comment-to plr">@</span>
+                                                <span class="reply-comment-author">
+                    <a href="#comment-2808" title="" data-original-title="路过
+">
+                        悦听有声                    </a>
+                </span>
+                                                你的网站挺美的            </p>
+
+                                            <div class="reply clearfix">
+                                                <a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;comment-2808&quot;, &quot;2808&quot;, &quot;respond&quot;, &quot;4929&quot; )" aria-label="回复给艺小昔" data-original-title="" title=""><div class="label label-danger pull-right">回复</div></a>            </div>
+
+                                        </div>
+                                    </div>
+                                </li><!-- #comment-## -->
+                            </ul><!-- .children -->
+                        </li><!-- #comment-## -->
+                    </ul>
+                </div>
+
+                <!-- Single Comment -->
+                {% for comment in pagination %}
+                    {{ macros.show_comments2(comment, post) }}
+                {% endfor %}
+
+
+            </div>
+
+
+
+        </article>
+
+
+
+{% endblock %}

@@ -107,7 +107,7 @@ class PostController extends BaseController
             10 /*limit per page*/
         );
 
-        return $this->render('post/show.html.twig', [
+        return $this->render('Article/article2.html.twig', [
             'post' => $post,
             'pagination' => $pagination,
             'comment_form' => $commentForm->createView()

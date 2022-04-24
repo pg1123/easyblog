@@ -16,17 +16,26 @@ import './bootstrap';
 const $ = require('jquery');
 
 
+require('./static/image/light_noise_diagonal.png');
+
 
 // import 'bootstrap';
 // import 'lightbox2';
-import './static/js/jquery.js';
+
+//index
+//import './static/js/jquery.js';
 import './static/js/jquery-migrate.min.js';
-import './static/js/jquery.min.js';
+// import './static/js/jquery.min.js';
 import './static/js/bootstrap.min.js';
 import './static/js/jquery.lazyload.js';
 import './static/js/jquery.magnific-popup.js';
 import './static/js/9iphp.js';
 import './static/js/fixed-top.js';
+
+//article
+import './static/js/single.js';
+import './static/js/wp-embed.min.js';
+
 
 const routes = require('../public/js/fos_js_routes.json');
 import Routing from '../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min.js';

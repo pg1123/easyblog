@@ -1,4 +1,7 @@
 twig:
+    globals:
+        admin_name: '%admin_name%'
+        project_name: '%project_name%'
     default_path: '%kernel.project_dir%/templates'
     form_themes:
         - 'bootstrap_4_layout.html.twig'

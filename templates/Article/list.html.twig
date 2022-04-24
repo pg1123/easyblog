@@ -6,18 +6,28 @@
       <![endif]-->
     <!--首页幻灯片-->
     <!--首页文章列表模块-->
+    {% for post in paginator %}
     <article class="well clearfix">
         <header class="entry-header">
-            <a href="yixiaoxideyoulai.html" class="entry-cover">
-                <img width="600" height="322" src="static/picture/体贴.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/体贴.jpg 600w, http://www.yixiaoxi.com/wp-content/uploads/2015/05/%E4%BD%93%E8%B4%B4-300x161.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2015/05/%E4%BD%93%E8%B4%B4-512x275.jpg 512w" sizes="(max-width: 600px) 100vw, 600px">			</a>
+            {% if post.postImage is not null %}
+{#                <img class="card-img-top" src={{ asset(post.postImage, 'file_upload') }}  alt="{{ post.title }}">#}
+                <a href="yixiaoxideyoulai.html" class="entry-cover">
+                    <img width="600" height="322" src="{{ asset(post.postImage, 'file_upload') }}" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/体贴.jpg 600w, http://www.yixiaoxi.com/wp-content/uploads/2015/05/%E4%BD%93%E8%B4%B4-300x161.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2015/05/%E4%BD%93%E8%B4%B4-512x275.jpg 512w" sizes="(max-width: 600px) 100vw, 600px">
+                </a>
+            {% endif %}
+
             <h1 class="entry-title">
                 <a href="yixiaoxideyoulai.html" title="艺小昔的由来">
-                    艺小昔的由来				<span class="label label-primary entry-tag">置顶</span>				<span class="label label-danger entry-tag">HOT</span>							</a>
+                    {{ post.title }}
+                    <span class="label label-primary entry-tag">置顶</span>
+                    <span class="label label-danger entry-tag">HOT</span>
+                </a>
             </h1>
             <div class="clearfix entry-meta">
 			<span class="pull-left">
 				<time class="entry-date fa fa-calendar" datetime="2015/05/24 23:45:23">
-					&nbsp;2015/05/24				</time>
+					{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}
+                </time>
 				<span class="dot">|</span>
 				<span class="categories-links fa fa-folder-o"> <a href="yixiaoxi.html" rel="category tag">艺小昔</a></span>
 				<span class="dot">|</span>
@@ -33,417 +43,18 @@
 
         </header>
         <div class="entry-summary entry-content clearfix">
-            <p>艺小昔是我上大学后给我自己起的一个笔名，这个笔名的由来和我大学经历的一件事有关系，她（陌小汐）的出现让我知道了什么是爱但我们不会联系了，写这篇文章希望更多的人珍惜爱你与你爱的人。我们不能仅仅活在过去，更要充实自己的未来。那些过去让我们回忆与成长，艺小昔它贯彻我的一生，影响我的做人方式，也是我的人生价值观。感谢我的舍友，感谢她，感谢关心我的&#8230;&#8230;</p>
+            <p>{{ post.summary }}&#8230;&#8230;</p>
         </div>
         <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
             <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
-
-
-            <a class="pull-right more-link" href="yixiaoxideyoulai.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="90houxiedeshu.html" class="entry-cover">
-                <img width="500" height="375" src="'{{ asset('static/picture/shu111.jpg') }}" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/shu111.jpg 500w, http://www.yixiaoxi.com/wp-content/uploads/2012/12/shu111-300x225.jpg 300w" sizes="(max-width: 500px) 100vw, 500px">			</a>
-            <h1 class="entry-title">
-                <a href="90houxiedeshu.html" title="90后艺小昔写的书">
-                    90后艺小昔写的书				<span class="label label-primary entry-tag">置顶</span>				<span class="label label-danger entry-tag">HOT</span>							</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2012/12/20 19:47:25">
-					&nbsp;2012/12/20				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="yixiaoxi.html" rel="category tag">艺小昔</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="90houxiedeshu.html#comments">74 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 37075 views</span>
-			</span>
+                <p class="label label-specs">本文暂无标签</p>
             </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>我从高中开始记录我的生活，这是90后艺小昔写的书记录我从高中开始到大学的生活，工作后都写在网站上了，励志更多的人并续写艺小昔的故事。《绅士心语录》、《大学回忆录》、《小昔亲语录》等，记录在艺小昔文集中。 我写的所有书籍都在这里面了，呵呵，现在有的可能找不到了。虽然文章文采不好，但真的把情感融入进去了。 艺小昔是我的笔名。回忆过去美好的，充&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <a href="yixiaoxiwenji.html" rel="tag">艺小昔文集</a>		</div>
-
-
-            <a class="pull-right more-link" href="90houxiedeshu.html" title="阅读全文">阅读全文&raquo;</a>
+            <a class="pull-right more-link" href="{{ path('post_show', {'id1': post.id}) }}" title="阅读全文">阅读全文&raquo;</a>
         </footer>
     </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="wodeqingganjingli.html" class="entry-cover">
-                <img width="704" height="526" src="static/picture/zhiruchujian.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/zhiruchujian.jpg 704w, http://www.yixiaoxi.com/wp-content/uploads/2022/03/zhiruchujian-300x224.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2022/03/zhiruchujian-512x383.jpg 512w" sizes="(max-width: 704px) 100vw, 704px">			</a>
-            <h1 class="entry-title">
-                <a href="wodeqingganjingli.html" title="我的情感经历">
-                    我的情感经历															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/03/03 03:02:07">
-					&nbsp;2022/03/03				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="xiaoxiaiqinglu.html" rel="category tag">小昔爱情录</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="wodeqingganjingli.html#comments">暂无评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 596 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>我的情感经历，目前为止并不多，上大学的时候谈过简短的两段恋爱，工作后那些年并未谈过，也有自己有好感的，2021年有遇到特别有好感但并未有结果，工作后很长一段时间没有想恋爱是因为事业一般，和朋友创业辛苦多年失败没挣到钱，家庭的变故持续很久。2021年才真正想去谈，事业上稳定不断再提高，自己和妈妈也买房子了。开启《小昔爱情录》的第二篇章，记录&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
+    {% endfor %}
 
 
-            <a class="pull-right more-link" href="wodeqingganjingli.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="2022nianwodeqingrenjiegaobai.html" class="entry-cover">
-                <img width="945" height="531" src="static/picture/qingrenjiebiaobai.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/qingrenjiebiaobai.jpg 945w, http://www.yixiaoxi.com/wp-content/uploads/2022/02/qingrenjiebiaobai-300x169.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2022/02/qingrenjiebiaobai-768x432.jpg 768w, http://www.yixiaoxi.com/wp-content/uploads/2022/02/qingrenjiebiaobai-512x288.jpg 512w" sizes="(max-width: 945px) 100vw, 945px">			</a>
-            <h1 class="entry-title">
-                <a href="2022nianwodeqingrenjiegaobai.html" title="2022年我的情人节告白">
-                    2022年我的情人节告白															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/02/14 03:02:55">
-					&nbsp;2022/02/14				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="xiaoxiaiqinglu.html" rel="category tag">小昔爱情录</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="2022nianwodeqingrenjiegaobai.html#comments">暂无评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 595 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>2022年我的情人节告白，今天很开心，我将提前开启我另一个篇章《小昔爱情录》，记录我与未来另一半，我和她之前发生的所有。 我之前有三个篇章，《绅士心语录》记录高中以前的事情，高中那时候自己想当一个绅士，哈哈，所以这么命名了。《大学回忆录》，大学生活还是人生很有回忆意义的时候，记录我三年的大学生活。《小昔亲语录》是我在工作以后开启的，记录我&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
-
-
-            <a class="pull-right more-link" href="2022nianwodeqingrenjiegaobai.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <h1 class="entry-title">
-                <a href="diyicipeididiquhuiju.html" title="第一次陪弟弟去荟聚">
-                    第一次陪弟弟去荟聚															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/02/13 20:07:44">
-					&nbsp;2022/02/13				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="xiaoxiqinyulu.html" rel="category tag">小昔亲语录</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="diyicipeididiquhuiju.html#comments">1 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 496 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>第一次陪弟弟去荟聚，陪弟弟一起打电玩、吃汉堡，给弟弟买玩具，记录在小昔亲语录中。 今天是星期天，原本是叫爸爸一起去新房子那边把剩下的一点砖头、黄沙、水泥搬回爸爸那里，说好下午一点去带爸爸，爸爸问我要不要去他那边吃饭，我说下午，后来爸爸说弟弟要去荟聚，让我带你们一起，于是我就去爸爸那边吃午饭了。 我自己真正当了搬砖人，去那边搬砖、黄沙、水泥&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <a href="didi.html" rel="tag">弟弟</a>		</div>
-
-
-            <a class="pull-right more-link" href="diyicipeididiquhuiju.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="wodechunjiejiaqi.html" class="entry-cover">
-                <img width="700" height="700" src="static/picture/guonianhao.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/guonianhao.jpg 700w, http://www.yixiaoxi.com/wp-content/uploads/2022/02/guonianhao-150x150.jpg 150w, http://www.yixiaoxi.com/wp-content/uploads/2022/02/guonianhao-300x300.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2022/02/guonianhao-512x512.jpg 512w" sizes="(max-width: 700px) 100vw, 700px">			</a>
-            <h1 class="entry-title">
-                <a href="wodechunjiejiaqi.html" title="我的春节假期">
-                    我的春节假期															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/02/08 20:32:02">
-					&nbsp;2022/02/08				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="qingganriji.html" rel="category tag">情感日记</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="wodechunjiejiaqi.html#comments">暂无评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 487 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>我的春节假期，2021年1月25日到2月6日，为期13天的假期，家人团聚很开心，记录一下，写下自己的情感日记。 哈哈，1月25日正好是我的生日，那天正好放假，不然就得请同事搓一顿了，省了一点钱哈哈。 不过放假前我其实好开心，老板对我一年的肯定，奖金给的蛮多的，我心里知道就好，网上就不公开了，其实25号请吃饭也没关系，我格局小了哈哈。 每年&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
-
-
-            <a class="pull-right more-link" href="wodechunjiejiaqi.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="wode32suishengri.html" class="entry-cover">
-                <img width="700" height="700" src="static/picture/32suishengri.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/32suishengri.jpg 700w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/32suishengri-150x150.jpg 150w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/32suishengri-300x300.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/32suishengri-512x512.jpg 512w" sizes="(max-width: 700px) 100vw, 700px">			</a>
-            <h1 class="entry-title">
-                <a href="wode32suishengri.html" title="我的32岁生日">
-                    我的32岁生日															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/01/27 11:23:00">
-					&nbsp;2022/01/27				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="yixiaoxi.html" rel="category tag">艺小昔</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="wode32suishengri.html#comments">7 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 985 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>我的32岁生日，是阳历1月25日，祝自己生日快乐，希望自己在新的一年里遇到彼此喜欢的人，记录在艺小昔生日中。 爸爸在很早前，就给我500元作为生日礼物。妈妈也是提前帮我买了衣服，今天买了菜去外婆家一起过生日。 早上很开心，收到好友洋洋的生日礼物，两盒巧克力。一本本子和一支笔，笔上写了聪，本子上写了一陆向前，真的挺感动的，而且还给我发了16&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <a href="yixiaoxishengri.html" rel="tag">艺小昔生日</a>		</div>
-
-
-            <a class="pull-right more-link" href="wode32suishengri.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="zhenzhengdepengyou.html" class="entry-cover">
-                <img width="900" height="550" src="static/picture/laopengyou.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/laopengyou.jpg 900w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/laopengyou-300x183.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/laopengyou-768x469.jpg 768w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/laopengyou-512x313.jpg 512w" sizes="(max-width: 900px) 100vw, 900px">			</a>
-            <h1 class="entry-title">
-                <a href="zhenzhengdepengyou.html" title="真正的朋友是什么？">
-                    真正的朋友是什么？															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/01/13 19:35:42">
-					&nbsp;2022/01/13				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="shenghuoganwu.html" rel="category tag">生活感悟</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="zhenzhengdepengyou.html#comments">暂无评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 629 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>真正的朋友是什么？我觉得是你在需要帮助的时候可以帮助你，这样的朋友并不多，大多都是过客，人生难得一知己，写下自己的生活感悟。 我们从小的时候到长大会认识很多人，比如发小、同学、同事、朋友等等，真正后期联系的并不多。就比如同学，从小学到大学，认识了很多同学，工作后，基本很少有联系的，大多是因为认识然后加了微信，而后不在一起，基本很少有联系。&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
-
-
-            <a class="pull-right more-link" href="zhenzhengdepengyou.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="pandianwode2021.html" class="entry-cover">
-                <img width="1440" height="919" src="static/picture/2021.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/2021.jpg 1440w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/2021-300x191.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/2021-768x490.jpg 768w, http://www.yixiaoxi.com/wp-content/uploads/2022/01/2021-512x327.jpg 512w" sizes="(max-width: 1440px) 100vw, 1440px">			</a>
-            <h1 class="entry-title">
-                <a href="pandianwode2021.html" title="盘点我的2021">
-                    盘点我的2021															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2022/01/02 03:49:02">
-					&nbsp;2022/01/02				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="gongzuozongjie.html" rel="category tag">工作总结</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="pandianwode2021.html#comments">5 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 1324 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>盘点我的2021，工作上又进步了一些，生活中最开心的是买了房子，情感路上有点曲折，写下我的一年总结。 谈谈工作 2021年，我在事业上又进步了，本来2020年我上班基本在9点左右。这一年，对我的考验是带新人，也很开心，今年还是招到小周了，我也是毫无保留的把方法教给她，我可能对她的要求或者期待还是蛮高的，希望她突破自己，也有自己新的方法。小&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <a href="yinianzongjie.html" rel="tag">一年总结</a>		</div>
-
-
-            <a class="pull-right more-link" href="pandianwode2021.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <h1 class="entry-title">
-                <a href="xiangqindeganshou.html" title="相亲的感受">
-                    相亲的感受															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2021/12/23 20:06:37">
-					&nbsp;2021/12/23				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="qingganriji.html" rel="category tag">情感日记</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="xiangqindeganshou.html#comments">1 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 530 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>目前为止相亲了有五次，谈谈相亲的感受，相亲感觉并不喜欢，更倾向于自己谈。 第一次相亲体验，里面有写到相亲感受，第一次嘛总是记忆犹新。第二次相亲，算我爸爸认识的朋友介绍的，常熟的，父母开五金店，她帮着一起打理，互相发了照片，一些家庭信息后，还没见面，她就说不太合适了。 相亲有一种情况，父母急，女儿不急，只是相亲应付一下，我尤其感觉第一次的相&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <a href="xiangqin.html" rel="tag">相亲</a>		</div>
-
-
-            <a class="pull-right more-link" href="xiangqindeganshou.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <a href="ruzhi2zhounian.html" class="entry-cover">
-                <img width="700" height="700" src="static/picture/2zhounian-1.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="static/picture/2zhounian-1.jpg 700w, http://www.yixiaoxi.com/wp-content/uploads/2021/11/2zhounian-1-150x150.jpg 150w, http://www.yixiaoxi.com/wp-content/uploads/2021/11/2zhounian-1-300x300.jpg 300w, http://www.yixiaoxi.com/wp-content/uploads/2021/11/2zhounian-1-512x512.jpg 512w" sizes="(max-width: 700px) 100vw, 700px">			</a>
-            <h1 class="entry-title">
-                <a href="ruzhi2zhounian.html" title="入职2周年">
-                    入职2周年															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2021/11/26 18:34:24">
-					&nbsp;2021/11/26				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="qingganriji.html" rel="category tag">情感日记</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="ruzhi2zhounian.html#comments">5 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 2845 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>今天是我入职2周年，算再次创业2周年，也感谢老板飞哥，祝自己在新的一年再突破。 在重新起航中，是2019年11月28日和飞哥一起创业。 今天是个特殊的日子，今天我买了一个蛋糕，是我入职2周年（再次和老板创业)，今天也是老板与同事的生日，祝你们生日快乐，也希望自己在以后的一年里事业再提升。 在这个行业已经有8年了，与老板一起将近6年，我们一&#8230;&#8230;</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
-
-
-            <a class="pull-right more-link" href="ruzhi2zhounian.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
-    <article class="well clearfix">
-        <header class="entry-header">
-            <h1 class="entry-title">
-                <a href="yixiaoxiboke9zhouniankuaile.html" title="艺小昔博客九周年快乐">
-                    艺小昔博客九周年快乐															</a>
-            </h1>
-            <div class="clearfix entry-meta">
-			<span class="pull-left">
-				<time class="entry-date fa fa-calendar" datetime="2021/11/11 21:48:38">
-					&nbsp;2021/11/11				</time>
-				<span class="dot">|</span>
-				<span class="categories-links fa fa-folder-o"> <a href="yixiaoxi.html" rel="category tag">艺小昔</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-user"> <a href="allen92.html" title="由艺小昔发布" rel="author">艺小昔</a></span>
-			</span>
-                <span class="visible-lg visible-md visible-sm pull-left">
-				<span class="dot">|</span>
-				<span class="fa fa-comments-o comments-link"> <a href="yixiaoxiboke9zhouniankuaile.html#comments">4 条评论</a></span>
-				<span class="dot">|</span>
-				<span class="fa fa-eye"> 1969 views</span>
-			</span>
-            </div>
-
-        </header>
-        <div class="entry-summary entry-content clearfix">
-            <p>艺小昔博客九周年快乐，今天是网站9周年，还是会更新网站，9年不容易，继续加油！ 现在基本很少更新了，一年更新的文章屈指可数，但还是会写，不知不觉网站9年了。 时代信息改变了，百度看文章的人更少了。写文章记录生活对于我来说就是爱好了。 以后还是会更新。 9年不容易，祝艺小昔博客9周年快乐！</p>
-        </div>
-        <footer class="entry-footer clearfix visible-lg visible-md visible-sm">
-            <div class="pull-left footer-tag">
-                <p class="label label-specs">本文暂无标签</p>		</div>
-
-
-            <a class="pull-right more-link" href="yixiaoxiboke9zhouniankuaile.html" title="阅读全文">阅读全文&raquo;</a>
-        </footer>
-    </article>
     <!--首页文章列表模块-->
     <!--分页-->
     <ul class='pagination pull-right'><li class='active'><a href='index1.html'>1</a></li><li><a href='2.html'>2</a></li><li><a href='3.html'>3</a></li><li><a href='4.html'>4</a></li><li><a href="2.html" class="next" title="下一页">&gt;</a></li><li><a href='22.html' class='extend' title='尾页'>&raquo;</a></li></ul>

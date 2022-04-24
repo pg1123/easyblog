@@ -4,10 +4,12 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    admin_name: 刘品洋
+    project_name: '%admin_name%个人博客'
     base_path: 'uploads/images'
     upload_dir: 'public/%base_path%'
     max_comment_level: 5
-    page_limit: 5
+    page_limit: 10
     locale: 'zh_CN'
     project_dir: '%kernel.project_dir%'
     strip_words:
