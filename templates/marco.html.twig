@@ -38,7 +38,7 @@
                                 <cite class="fn">
                                     <a target="_blank" href="javascript:;" rel="external nofollow" class="url" data-original-title="" title="">{{ comment.author }}</a>
                                 </cite>
-                                <span class="comment-date">{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</span>
+                                <span class="comment-date">{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</span>
                             </h4>
                             <p>{{ comment.message }}</p>
 
@@ -47,23 +47,28 @@
                         </div>
                     </div>
                     <ul class="children">
+                        {% for childComment in comment.children %}
                         <li class="comment byuser comment-author-allen92 bypostauthor odd alt depth-2" id="comment-2808">
                             <div class="comment-wrap" id="comment-2808">
                                 <div class="comment-author pull-left">
-                                    <img alt="" src="http://secure.gravatar.com/avatar/eb7f1aa6ec0760ce49e24cfde643168b?s=50&amp;d=mm&amp;r=g" srcset="http://secure.gravatar.com/avatar/eb7f1aa6ec0760ce49e24cfde643168b?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" width="50" height="50">        </div>
+                                    <img alt="" src="http://secure.gravatar.com/avatar/eb7f1aa6ec0760ce49e24cfde643168b?s=50&amp;d=mm&amp;r=g" srcset="http://secure.gravatar.com/avatar/eb7f1aa6ec0760ce49e24cfde643168b?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" width="50" height="50">
+                                </div>
                                 <div class="comment-body">
                                     <h4>
-                                        <cite class="fn"><a target="_blank" href="index1.html" rel="external nofollow" class="url" data-original-title="" title="">艺小昔</a> <small class="label label-primary">博主</small></cite>                <span class="comment-date">
-                    2015/05/26 18:06                </span>
+                                        <cite class="fn">
+                                            <a target="_blank" href="index1.html" rel="external nofollow" class="url" data-original-title="" title="">{{ childComment.author }}</a>
+                                            <small class="label label-primary">博主</small></cite>
+                                        <span class="comment-date">{{ childComment.createdAt ? childComment.createdAt|date('Y-m-d H:i:s') : '' }}</span>
                                     </h4>
                                     <p>
                                         <span class="comment-to plr">@</span>
                                         <span class="reply-comment-author">
-                    <a href="#comment-2808" title="" data-original-title="路过
-">
-                        悦听有声                    </a>
-                </span>
-                                        你的网站挺美的            </p>
+                                            <a href="#comment-2808" title="" data-original-title="路过">
+                                                {{ childComment.author }}
+                                            </a>
+                                        </span>
+                                        {{ childComment.message }}
+                                    </p>
 
                                     <div class="reply clearfix">
                                         <a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;comment-2808&quot;, &quot;2808&quot;, &quot;respond&quot;, &quot;4929&quot; )" aria-label="回复给艺小昔" data-original-title="" title=""><div class="label label-danger pull-right">回复</div></a>            </div>
@@ -71,6 +76,7 @@
                                 </div>
                             </div>
                         </li><!-- #comment-## -->
+                        {% endfor %}
                     </ul><!-- .children -->
                 </li><!-- #comment-## -->
             </ul>
